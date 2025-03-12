@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classworks</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            background-color: #d3d3d3;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            height: 90vh;
+            justify-content: space-between;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .projects {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .button {
+            width: 180px;
+            height: 60px;
+            border-radius: 30px;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: gray;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+
+        #display {
+            font-size: 30px;
+            font-weight: bold;
+            padding: 40px;
+            border-radius: 15px;
+            width: 90%;
+            height: 75%;
+            text-align: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, color 0.3s;
+            background-color: gray;
+            margin-top: 40px; /* Added more gap */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Classworks</h1>
+        <div class="projects">
+            <button class="button" onclick="showProject(1)">Project 1</button>
+            <button class="button" onclick="showProject(2)">Project 2</button>
+            <button class="button" onclick="showProject(3)">Project 3</button>
+        </div>
+        <div id="display">Select a project</div>
+    </div>
+
+    <script>
+        function showProject(projectNumber) {
+            let display = document.getElementById("display");
+            switch (projectNumber) {
+                case 1:
+                    display.textContent = "This is the first project.";
+                    display.style.backgroundColor = "blue";
+                    break;
+                case 2:
+                    display.textContent = "This is the second project.";
+                    display.style.backgroundColor = "red";
+                    break;
+                case 3:
+                    display.textContent = "This is the third project.";
+                    display.style.backgroundColor = "green";
+                    break;
+                default:
+                    display.textContent = "Select a project";
+                    display.style.backgroundColor = "gray";
+            }
+        }
+    </script>
+</body>
+</html>
